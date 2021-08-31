@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/react-pegination/static/css/main.a617e044.chunk.css",
-    "main.js": "/react-pegination/static/js/main.401e9214.chunk.js",
-    "main.js.map": "/react-pegination/static/js/main.401e9214.chunk.js.map",
-    "runtime-main.js": "/react-pegination/static/js/runtime-main.1ca6a50b.js",
-    "runtime-main.js.map": "/react-pegination/static/js/runtime-main.1ca6a50b.js.map",
-    "static/css/2.983f79de.chunk.css": "/react-pegination/static/css/2.983f79de.chunk.css",
-    "static/js/2.76ae5b17.chunk.js": "/react-pegination/static/js/2.76ae5b17.chunk.js",
-    "static/js/2.76ae5b17.chunk.js.map": "/react-pegination/static/js/2.76ae5b17.chunk.js.map",
-    "static/js/3.7cf8d34b.chunk.js": "/react-pegination/static/js/3.7cf8d34b.chunk.js",
-    "static/js/3.7cf8d34b.chunk.js.map": "/react-pegination/static/js/3.7cf8d34b.chunk.js.map",
+    "main.css": "/react-pegination/static/css/main.93651312.chunk.css",
+    "main.js": "/react-pegination/static/js/main.783c7c55.chunk.js",
+    "main.js.map": "/react-pegination/static/js/main.783c7c55.chunk.js.map",
+    "runtime-main.js": "/react-pegination/static/js/runtime-main.be690885.js",
+    "runtime-main.js.map": "/react-pegination/static/js/runtime-main.be690885.js.map",
+    "static/css/2.18301563.chunk.css": "/react-pegination/static/css/2.18301563.chunk.css",
+    "static/js/2.054ea8b9.chunk.js": "/react-pegination/static/js/2.054ea8b9.chunk.js",
+    "static/js/2.054ea8b9.chunk.js.map": "/react-pegination/static/js/2.054ea8b9.chunk.js.map",
+    "static/js/3.61ec1fc7.chunk.js": "/react-pegination/static/js/3.61ec1fc7.chunk.js",
+    "static/js/3.61ec1fc7.chunk.js.map": "/react-pegination/static/js/3.61ec1fc7.chunk.js.map",
     "index.html": "/react-pegination/index.html",
-    "static/css/2.983f79de.chunk.css.map": "/react-pegination/static/css/2.983f79de.chunk.css.map",
-    "static/css/main.a617e044.chunk.css.map": "/react-pegination/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.76ae5b17.chunk.js.LICENSE.txt": "/react-pegination/static/js/2.76ae5b17.chunk.js.LICENSE.txt",
+    "static/css/2.18301563.chunk.css.map": "/react-pegination/static/css/2.18301563.chunk.css.map",
+    "static/css/main.93651312.chunk.css.map": "/react-pegination/static/css/main.93651312.chunk.css.map",
+    "static/js/2.054ea8b9.chunk.js.LICENSE.txt": "/react-pegination/static/js/2.054ea8b9.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-icons.css": "/react-pegination/static/media/bootstrap-icons.dfd0ea12.woff2",
     "static/media/logo.6ce24c58.svg": "/react-pegination/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1ca6a50b.js",
-    "static/css/2.983f79de.chunk.css",
-    "static/js/2.76ae5b17.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.401e9214.chunk.js"
+    "static/js/runtime-main.be690885.js",
+    "static/css/2.18301563.chunk.css",
+    "static/js/2.054ea8b9.chunk.js",
+    "static/css/main.93651312.chunk.css",
+    "static/js/main.783c7c55.chunk.js"
   ]
 }
