@@ -12,6 +12,10 @@
     width: 90px;
     height: 40px;
 }
+.show-selected-genre {
+    text-align: right;
+    color: rgb(235, 204, 30);
+}
 .page-content-count {
     text-align: right;
     color: white;

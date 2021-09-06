@@ -10,6 +10,8 @@ class Pagination extends Component {
         const totalPages = Math.ceil(totalItemsCount / itemsPerPage) + 1;
         const pages = _.range(1, totalPages, 1);
 
+        if (totalItemsCount <= itemsPerPage) return null;
+        
         return (
             <nav aria-label="Page navigation example">
                 <ul class="pagination">

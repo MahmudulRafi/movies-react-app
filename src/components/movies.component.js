@@ -1,34 +1,37 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import Pagination from "../common/pagination.component";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Filtering from "../common/filtering.component";
-import { getMovies } from "../services/movies.service";
 import "../assets/movies.css";
+import { getMovies, getGenres } from "../services/movies.service";
+import MoviesTable from "./movies-table.component";
 
 class Movies extends Component {
     state = {
         movies: getMovies(),
-        genres: [
-            "Action",
-            "Crime",
-            "Drama",
-            "Biography",
-            "History",
-            "Adventure",
-            "Fantasy",
-            "Western",
-            "Comedy",
-            "Thriller",
-            "War",
-            "Animation",
-            "Horror",
-        ],
-        itemsPerPage: 8,
+        genres: [{ name: "All Genres" }, ...getGenres()],
+        itemsPerPage: 7,
         activePage: 1,
+        selectedGenre: "All Genres",
     };
 
-    paginateMovies = () => {
-        const { movies, itemsPerPage, activePage } = this.state;
+    handleSelectedGenre = (genre) => {
+        this.setState({ ...this.state, selectedGenre: genre, activePage: 1 });
+    };
+
+    filterMovies = () => {
+        const { movies, selectedGenre } = this.state;
+
+        const filteredMovies = movies.filter((movie) => {
+            if (selectedGenre === "All Genres") return movie;
+            if (movie.genres.includes(selectedGenre)) return true;
+            else return false;
+        });
+        return filteredMovies;
+    };
+
+    paginateMovies = (movies) => {
+        const { itemsPerPage, activePage } = this.state;
         const startPage = (activePage - 1) * itemsPerPage;
         const paginatedMovies = movies.slice(
             startPage,
@@ -56,13 +59,21 @@ class Movies extends Component {
     };
 
     render() {
-        const movies = this.paginateMovies();
+        const filteredMovies = this.filterMovies();
+        const movies = this.paginateMovies(filteredMovies);
 
         return (
             <>
                 <div class="container-fluid">
                     <div className="row">
-                        <Filtering genres={this.state.genres} />
+                        <Filtering
+                            items={this.state.genres.map((genre, index) => ({
+                                id: index,
+                                name: genre.name,
+                            }))}
+                            selectedItem={this.state.selectedGenre}
+                            onClick={this.handleSelectedGenre}
+                        />
                         <div className="col-lg-10">
                             <div className="heading">
                                 <img
@@ -70,61 +81,25 @@ class Movies extends Component {
                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1200px-IMDB_Logo_2016.svg.png"
                                 ></img>
                                 {/* <h3 className="page-heading">IMDb</h3> */}
+
+                                <h6 className="show-selected-genre">
+                                    Gerne : &nbsp;
+                                    {this.state.selectedGenre === ""
+                                        ? null
+                                        : this.state.selectedGenre}
+                                    &nbsp; &nbsp;
+                                </h6>
                                 <h6 className="page-content-count">
-                                    Showing {movies.length} Movies &nbsp; &nbsp;
+                                    Showing {filteredMovies.length} Movies
+                                    &nbsp; &nbsp;
                                 </h6>
                             </div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Poster</th>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">IMDB Rating</th>
-                                        <th scope="col">Your Rating</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {movies.map((movie) => (
-                                        <tr>
-                                            <td>
-                                                <img
-                                                    style={{
-                                                        width: "32px",
-                                                        height: "auto",
-                                                    }}
-                                                    src={movie.posterurl}
-                                                ></img>
-                                            </td>
-                                            <td>{movie.title}</td>
-                                            <td>
-                                                <i class="bi bi-star">
-                                                    {" " + movie.imdbRating}
-                                                </i>
-                                            </td>
-                                            <td>
-                                                <i
-                                                    onClick={() =>
-                                                        this.handleUserRating(
-                                                            movie.movieId
-                                                        )
-                                                    }
-                                                    className={
-                                                        movie.yourRating
-                                                            ? "bi bi-star-fill"
-                                                            : "bi bi-star"
-                                                    }
-                                                >
-                                                    {movie.yourRating
-                                                        ? " Rated"
-                                                        : " "}
-                                                </i>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                            <MoviesTable
+                                movies={movies}
+                                onClick={this.handleUserRating}
+                            />
                             <Pagination
-                                totalItemsCount={this.state.movies.length}
+                                totalItemsCount={filteredMovies.length}
                                 itemsPerPage={this.state.itemsPerPage}
                                 activePage={this.state.activePage}
                                 onActivePage={this.handleActivePage}
