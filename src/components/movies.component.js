@@ -1,10 +1,11 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import Pagination from "../common/pagination.component";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Filtering from "../common/filtering.component";
 import "../assets/movies.css";
 import { getMovies, getGenres } from "../services/movies.service";
 import MoviesTable from "./movies-table.component";
+import _ from "lodash";
 
 class Movies extends Component {
     state = {
@@ -13,6 +14,7 @@ class Movies extends Component {
         itemsPerPage: 7,
         activePage: 1,
         selectedGenre: "All Genres",
+        sortColumn: { path: "title", order: "asc" },
     };
 
     handleSelectedGenre = (genre) => {
@@ -28,6 +30,16 @@ class Movies extends Component {
             else return false;
         });
         return filteredMovies;
+    };
+
+    sortMovies = (movies) => {
+        const { sortColumn } = this.state;
+        const sortedMovies = _.orderBy(
+            movies,
+            [sortColumn.path],
+            [sortColumn.order]
+        );
+        return sortedMovies;
     };
 
     paginateMovies = (movies) => {
@@ -54,13 +66,18 @@ class Movies extends Component {
         this.setState({ movies: moviesList });
     };
 
+    handleSort = (sortColumn) => {
+        this.setState({ ...this.state, sortColumn });
+    };
+
     handleActivePage = (page) => {
         this.setState({ ...this.state.movies, activePage: page });
     };
 
     render() {
         const filteredMovies = this.filterMovies();
-        const movies = this.paginateMovies(filteredMovies);
+        const sortedMovies = this.sortMovies(filteredMovies);
+        const movies = this.paginateMovies(sortedMovies);
 
         return (
             <>
@@ -72,7 +89,7 @@ class Movies extends Component {
                                 name: genre.name,
                             }))}
                             selectedItem={this.state.selectedGenre}
-                            onClick={this.handleSelectedGenre}
+                            onSelectItem={this.handleSelectedGenre}
                         />
                         <div className="col-lg-10">
                             <div className="heading">
@@ -96,7 +113,9 @@ class Movies extends Component {
                             </div>
                             <MoviesTable
                                 movies={movies}
-                                onClick={this.handleUserRating}
+                                onRating={this.handleUserRating}
+                                onSort={this.handleSort}
+                                sortColumn={this.state.sortColumn}
                             />
                             <Pagination
                                 totalItemsCount={filteredMovies.length}

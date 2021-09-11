@@ -1,8 +1,7 @@
 import React from "react";
 
 const Filtering = (props) => {
-    
-    const { items, onClick, selectedItem } = props;
+    const { items, onSelectItem, selectedItem } = props;
 
     return (
         <div className="col-lg-2">
@@ -11,7 +10,7 @@ const Filtering = (props) => {
                     <li
                         style={{ cursor: "pointer" }}
                         key={item.id}
-                        onClick={() => onClick(item.name)}
+                        onClick={() => onSelectItem(item.name)}
                         class={
                             selectedItem === item.name
                                 ? "list-group-item active"

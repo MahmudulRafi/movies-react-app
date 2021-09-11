@@ -1,52 +1,57 @@
 import React from "react";
 import Table from "../common/table.component";
 
-const MoviesTable = ({ movies, onClick }) => {
+const MoviesTable = ({ movies, onRating, onSort, sortColumn }) => {
     const columns = [
         {
             label: "Poster",
+            path: "posterurl",
             content: (movie) => (
-                <td>
-                    <img
-                        style={{
-                            width: "32px",
-                            height: "auto",
-                        }}
-                        src={movie.posterurl}
-                    ></img>
-                </td>
+                <img
+                    style={{
+                        width: "32px",
+                        height: "auto",
+                    }}
+                    src={movie.posterurl}
+                ></img>
             ),
         },
         {
             label: "Title",
-            content: (movie) => <td>{movie.title}</td>,
+            path: "title",
+            content: (movie) => movie.title,
         },
         {
             label: "IMDB Rating",
+            path: "imdbRating",
             content: (movie) => (
-                <td>
-                    <i class="bi bi-star">{" " + movie.imdbRating}</i>
-                </td>
+                <i class="bi bi-star">{" " + movie.imdbRating}</i>
             ),
         },
         {
             label: "Your Rating",
+            path: "yourRating",
             content: (movie) => (
-                <td>
-                    <i
-                        onClick={() => onClick(movie.movieId)}
-                        className={
-                            movie.yourRating ? "bi bi-star-fill" : "bi bi-star"
-                        }
-                    >
-                        {movie.yourRating ? " Rated" : " "}
-                    </i>
-                </td>
+                <i
+                    onClick={() => onRating(movie.movieId)}
+                    className={
+                        movie.yourRating ? "bi bi-star-fill" : "bi bi-star"
+                    }
+                >
+                    {movie.yourRating ? " Rated" : " "}
+                </i>
             ),
         },
     ];
 
-    return <Table items={movies} onClick={onClick} columns={columns} />;
+    return (
+        <Table
+            items={movies}
+            columns={columns}
+            onSort={onSort}
+            sortColumn={sortColumn}
+        />
+    );
 };
 
 export default MoviesTable;
