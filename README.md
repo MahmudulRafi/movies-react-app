@@ -2,6 +2,7 @@
 
 Live Preview : https://mahmudulrafi.github.io/react-pegination-filtering-sorting
 
-![image](https://user-images.githubusercontent.com/73344827/132938359-3c093819-1be2-4b22-ba14-9c8a1bc7f3d5.png)
+![app](https://user-images.githubusercontent.com/73344827/132938545-673858f7-2f57-40c6-8451-09ecc17e862c.gif)
+
 
 
