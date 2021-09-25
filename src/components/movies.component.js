@@ -11,7 +11,7 @@ class Movies extends Component {
     state = {
         movies: getMovies(),
         genres: [{ name: "All Genres" }, ...getGenres()],
-        itemsPerPage: 7,
+        itemsPerPage: 6,
         activePage: 1,
         selectedGenre: "All Genres",
         sortColumn: { path: "title", order: "asc" },
@@ -93,11 +93,16 @@ class Movies extends Component {
                         />
                         <div className="col-lg-10">
                             <div className="heading">
-                                <img
+                                {/* <img
                                     className="page-heading"
                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1200px-IMDB_Logo_2016.svg.png"
-                                ></img>
-                                {/* <h3 className="page-heading">IMDb</h3> */}
+                                ></img> */}
+                                <h3
+                                    style={{ color: "rgb(235, 204, 30)" }}
+                                    className="text-center"
+                                >
+                                    IMDb Top Movies
+                                </h3>
 
                                 <h6 className="show-selected-genre">
                                     Gerne : &nbsp;
