@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/react-pegination-filtering-sorting/static/css/main.a9b5a1dd.chunk.css",
-    "main.js": "/react-pegination-filtering-sorting/static/js/main.de971e62.chunk.js",
-    "main.js.map": "/react-pegination-filtering-sorting/static/js/main.de971e62.chunk.js.map",
-    "runtime-main.js": "/react-pegination-filtering-sorting/static/js/runtime-main.732cf7f5.js",
-    "runtime-main.js.map": "/react-pegination-filtering-sorting/static/js/runtime-main.732cf7f5.js.map",
+    "main.css": "/react-pegination-filtering-sorting/static/css/main.5f74f9e7.chunk.css",
+    "main.js": "/react-pegination-filtering-sorting/static/js/main.db11d8c7.chunk.js",
+    "main.js.map": "/react-pegination-filtering-sorting/static/js/main.db11d8c7.chunk.js.map",
+    "runtime-main.js": "/react-pegination-filtering-sorting/static/js/runtime-main.76e30f77.js",
+    "runtime-main.js.map": "/react-pegination-filtering-sorting/static/js/runtime-main.76e30f77.js.map",
     "static/css/2.17fc0849.chunk.css": "/react-pegination-filtering-sorting/static/css/2.17fc0849.chunk.css",
-    "static/js/2.fb4aac52.chunk.js": "/react-pegination-filtering-sorting/static/js/2.fb4aac52.chunk.js",
-    "static/js/2.fb4aac52.chunk.js.map": "/react-pegination-filtering-sorting/static/js/2.fb4aac52.chunk.js.map",
-    "static/js/3.36ef948c.chunk.js": "/react-pegination-filtering-sorting/static/js/3.36ef948c.chunk.js",
-    "static/js/3.36ef948c.chunk.js.map": "/react-pegination-filtering-sorting/static/js/3.36ef948c.chunk.js.map",
+    "static/js/2.705108bb.chunk.js": "/react-pegination-filtering-sorting/static/js/2.705108bb.chunk.js",
+    "static/js/2.705108bb.chunk.js.map": "/react-pegination-filtering-sorting/static/js/2.705108bb.chunk.js.map",
+    "static/js/3.13efd741.chunk.js": "/react-pegination-filtering-sorting/static/js/3.13efd741.chunk.js",
+    "static/js/3.13efd741.chunk.js.map": "/react-pegination-filtering-sorting/static/js/3.13efd741.chunk.js.map",
     "index.html": "/react-pegination-filtering-sorting/index.html",
     "static/css/2.17fc0849.chunk.css.map": "/react-pegination-filtering-sorting/static/css/2.17fc0849.chunk.css.map",
-    "static/css/main.a9b5a1dd.chunk.css.map": "/react-pegination-filtering-sorting/static/css/main.a9b5a1dd.chunk.css.map",
-    "static/js/2.fb4aac52.chunk.js.LICENSE.txt": "/react-pegination-filtering-sorting/static/js/2.fb4aac52.chunk.js.LICENSE.txt",
+    "static/css/main.5f74f9e7.chunk.css.map": "/react-pegination-filtering-sorting/static/css/main.5f74f9e7.chunk.css.map",
+    "static/js/2.705108bb.chunk.js.LICENSE.txt": "/react-pegination-filtering-sorting/static/js/2.705108bb.chunk.js.LICENSE.txt",
     "static/media/bootstrap-icons.css": "/react-pegination-filtering-sorting/static/media/bootstrap-icons.dfd0ea12.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.732cf7f5.js",
+    "static/js/runtime-main.76e30f77.js",
     "static/css/2.17fc0849.chunk.css",
-    "static/js/2.fb4aac52.chunk.js",
-    "static/css/main.a9b5a1dd.chunk.css",
-    "static/js/main.de971e62.chunk.js"
+    "static/js/2.705108bb.chunk.js",
+    "static/css/main.5f74f9e7.chunk.css",
+    "static/js/main.db11d8c7.chunk.js"
   ]
 }
