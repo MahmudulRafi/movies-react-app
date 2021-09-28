@@ -18,7 +18,7 @@ class Movies extends Component {
     };
 
     handleSelectedGenre = (genre) => {
-        this.setState({ ...this.state, selectedGenre: genre, activePage: 1 });
+        this.setState({ selectedGenre: genre, activePage: 1 });
     };
 
     filterMovies = () => {
@@ -67,11 +67,11 @@ class Movies extends Component {
     };
 
     handleSort = (sortColumn) => {
-        this.setState({ ...this.state, sortColumn });
+        this.setState({ sortColumn });
     };
 
     handleActivePage = (page) => {
-        this.setState({ ...this.state.movies, activePage: page });
+        this.setState({ activePage: page });
     };
 
     render() {

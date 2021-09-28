@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Form from "../common/form.component";
 import Input from "../common/input.component";
+import { Link } from "react-router-dom";
+import App from "../App";
 
 class Login extends Form {
     state = {
@@ -23,7 +25,7 @@ class Login extends Form {
                 errors.username = "Username may be incorrect.";
             }
 
-            this.setState({ ...this.state, errors });
+            this.setState({ errors });
         }
     };
 
@@ -44,7 +46,6 @@ class Login extends Form {
                             errors={this.state.errors}
                         />
                     </div>
-
                     <div className="mb-3">
                         <Input
                             label="Password"
@@ -71,6 +72,16 @@ class Login extends Form {
                             Login
                         </button>
                     </div>
+                    <br />
+                    Do not have account ? Go to &nbsp;
+                    <Link
+                        style={{
+                            color: "black",
+                        }}
+                        to="/sign-up"
+                    >
+                        Sign Up
+                    </Link>
                 </form>
             </div>
         );

@@ -10,16 +10,25 @@ class Navbar extends Form {
         movies: getMovies(),
     };
 
+    clearSearch = () => {
+        const data = this.state.data;
+        data.searchQuery = "";
+
+        this.setState({ ...this.state, data });
+    };
+
     doSubmit = (event) => {};
 
     searchMovies = () => {
         if (this.state.data.searchQuery.trim() == "") return [];
 
-        return this.state.movies.filter((movie) =>
-            movie.title
-                .toLowerCase()
-                .includes(this.state.data.searchQuery.toLowerCase())
-        );
+        return this.state.movies
+            .filter((movie) =>
+                movie.title
+                    .toLowerCase()
+                    .includes(this.state.data.searchQuery.toLowerCase())
+            )
+            .filter((movie, idx) => idx < 10);
     };
 
     render() {
@@ -55,11 +64,6 @@ class Navbar extends Form {
                                     Movies
                                 </Link>
                             </li>
-                            <li class="nav-item">
-                                <Link class="nav-link" to="/add-movie">
-                                    Add Movie
-                                </Link>
-                            </li>
                         </ul>
                         <form
                             class="d-flex w-50 mx-auto"
@@ -91,9 +95,19 @@ class Navbar extends Form {
                                     {searchedMovies.map((movie, idx) => (
                                         <li
                                             key={idx}
+                                            onClick={this.clearSearch}
                                             className="list-group-item"
+                                            style={{ cursor: "pointer" }}
                                         >
-                                            {movie.title}
+                                            <Link
+                                                style={{
+                                                    textDecoration: "none",
+                                                    color: "black",
+                                                }}
+                                                to={"/movie/" + movie.movieId}
+                                            >
+                                                {movie.title}
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
