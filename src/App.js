@@ -20,7 +20,7 @@ function App() {
                     <Route path="/add-movie" component={AddMovie} />
                     <Route path="/login" component={Login} />
                     <Route path="/sign-up" component={SignUp} />
-                    <Route exact path="/" component={Home} />
+                    <Route exact path="/" component={Movies} />
                     <Route path="/not-found" component={NotFound} />
                     <Redirect path="/not-found" />
                 </Route>
